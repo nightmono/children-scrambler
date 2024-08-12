@@ -44,4 +44,8 @@ def scramble_children(path: str):
         except NotADirectoryError:
             pass
 
-scramble_children(os.getcwd())
+print("Are you sure you want to run this script? This will cause damage to this directory.")
+if input(f"Type out `{os.getcwd()}` to confirm: ") == os.getcwd():
+    scramble_children(os.getcwd())
+else:
+    print("Cancelled")
